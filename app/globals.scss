@@ -71,9 +71,6 @@
 }
  
 @layer base {
-  * {
-
-  }
   body {
     /* @apply bg-background text-foreground; */
     /* overflow: hidden !important; */
@@ -160,15 +157,6 @@
 
 
 
-body {
-  /* margin: 0;
-  padding: 0;
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-
-}
 
 .icon-container {
   position: relative;
