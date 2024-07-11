@@ -2,10 +2,14 @@ import Header from '@/components/Header/Header'
 import countriesServices from '../../../services/countries'
 import CountryDetail from '@/components/CountryDetail/CountryDetail'
 
-export default async function ({ params }: { params: { countryId: string } }) {
-  const { countryId } = params
+interface PageProps {
+  params: { countryId: string };
+}
 
-  const countryData = await countriesServices.fetchCountry({ countryId })
+const CountryPage: React.FC<PageProps> = async ({ params }) => {
+  const { countryId } = params;
+
+  const countryData = await countriesServices.fetchCountry({ countryId });
 
   return (
     <div className="bg-very-light-gray dark:bg-very-dark-blue-bg min-h-screen">
@@ -14,5 +18,7 @@ export default async function ({ params }: { params: { countryId: string } }) {
         <CountryDetail country={countryData} />
       </main>
     </div>
-  )
-}
+  );
+};
+
+export default CountryPage;
